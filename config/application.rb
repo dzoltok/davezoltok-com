@@ -32,7 +32,12 @@ module DavezoltokCom
     # Middleware like session, flash, cookies can be added back manually.
     # Skip views, helpers and assets when generating a new resource.
     config.api_only = true
+
+    # Fix the scaffold controller generator to work until API-only mode
     config.app_generators.scaffold_controller = :scaffold_controller
+
+    # Turn off asset compilation in production (see https://devcenter.heroku.com/articles/rails-asset-pipeline#compile-set-to-true-in-production)
+    config.assets.compile = false
 
     # Middleware for ActiveAdmin
     config.middleware.use Rack::MethodOverride
