@@ -1,7 +1,7 @@
 class PostsController < ApiController
   # GET /api/posts
   def index
-    @posts = Post.select("id, title, created_at").all
+    @posts = Post.all
     render json: @posts
   end
 
