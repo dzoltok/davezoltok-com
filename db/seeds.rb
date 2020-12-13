@@ -6,3 +6,13 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 AdminUser.create!(email: 'admin@example.com', password: 'password', password_confirmation: 'password') if Rails.env.development?
+
+Post.create!(
+  title: "Example title",
+  subtitle: "Example subtitle",
+  body: <<POST_BODY
+This is an example of a multi-paragraph post body that may appear on the site.
+
+If this sentence is displayed in the same paragraph as the previous sentence, something has gone wrong.
+POST_BODY
+) if Rails.env.development?
